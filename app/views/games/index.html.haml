@@ -1,9 +1,9 @@
 %h1 Listing games
 
-%table
+%table.table
   %thead
     %tr
-      %th Length type
+      %th メンツ
       %th
       %th
       %th
@@ -11,7 +11,7 @@
   %tbody
     - @games.each do |game|
       %tr
-        %td= game.length_type
+        %td= game.results.sort_by(&:ranking).sum{|r| "#{r.user.name} | "}.chop.chop
         %td= link_to 'Show', game
         %td= link_to 'Edit', edit_game_path(game)
         %td= link_to 'Destroy', game, :method => :delete, :data => { :confirm => 'Are you sure?' }

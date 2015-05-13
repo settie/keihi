@@ -4,3 +4,14 @@ ja:
       length_type:
         half: 半荘
         east: 東風
+    result:
+      position:
+        east: 東
+        south: 南
+        west: 西
+        north: 北
+  activerecord:
+    attributes:
+      game:
+        length_type: 種類
+

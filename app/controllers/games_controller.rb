@@ -15,6 +15,10 @@ class GamesController < ApplicationController
   # GET /games/new
   def new
     @game = Game.new
+    @game.results.build(position: :east)
+    @game.results.build(position: :south)
+    @game.results.build(position: :west)
+    @game.results.build(position: :north)
   end
 
   # GET /games/1/edit
@@ -69,6 +73,9 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:length_type)
+      params.require(:game).permit(
+        :length_type,
+        results_attributes: [:user_id, :position, :point]
+      )
     end
 end

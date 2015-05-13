@@ -23,12 +23,12 @@ class Game < ActiveRecord::Base
   def calc_score_and_ranking
     unless results.length == PLAYER_COUNT
       errors.add(:base, "need #{PLAYER_COUNT} results")
-      return
+      return false
     end
 
-    unless results.map(&:point).sum == TOTAL_POINT
+    unless results.map(&:point).compact.sum == TOTAL_POINT
       errors.add(:base, "need #{TOTAL_POINT} points")
-      return
+      return false
     end
 
     # first sort key: point(DESC), second sort key: position(ASC)

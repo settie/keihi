@@ -1,8 +1,15 @@
 %p#notice= notice
 
 %p
-  %b Length type:
-  = @game.length_type
+  %b #{Game.human_attribute_name(:length_type)}:
+  = @game.length_type_text
+
+- @game.results.sort_by(&:ranking).each do |result|
+  %p
+    #{result.ranking}位
+    #{result.user.name} (#{result.position_text})
+    %b #{Result.human_attribute_name(:score)}:
+    = result.score
 
 = link_to 'Edit', edit_game_path(@game)
 \|
