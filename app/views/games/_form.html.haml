@@ -8,6 +8,6 @@
 
   .field
     = f.label :length_type
-    = f.text_field :length_type
+    = f.select :length_type, Game.length_type.options
   .actions
     = f.submit 'Save'
