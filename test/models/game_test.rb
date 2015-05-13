@@ -63,4 +63,92 @@ class GameTest < ActiveSupport::TestCase
     game.results << Result.new(user: @user, position: :north, point: 15000, score: -35, ranking: 4)
     assert_not game.save, '99900 points'
   end
+
+  test 'should set scores and rankings' do
+    game = Game.new
+    game.results << first_result  = Result.new(user: @user, position: :east,  point: 35000)
+    game.results << second_result = Result.new(user: @user, position: :south, point: 26000)
+    game.results << third_result  = Result.new(user: @user, position: :west,  point: 24000)
+    game.results << fourth_result = Result.new(user: @user, position: :north, point: 15000)
+
+    game.save
+
+    assert first_result.score   == 45, 'first score is 45'
+    assert first_result.ranking == 1,  'first ranking is 1'
+
+    assert second_result.score   == 6, 'second score is 6'
+    assert second_result.ranking == 2, 'second ranking is 2'
+
+    assert third_result.score   == -16, 'third score is -16'
+    assert third_result.ranking == 3,   'third ranking is 3'
+
+    assert fourth_result.score   == -35, 'fourth score is -35'
+    assert fourth_result.ranking == 4,   'fourth ranking is 4'
+  end
+
+  test 'should set scores and rankings 2' do # XXX 名前の雑さよ...
+    game = Game.new
+    game.results << first_result  = Result.new(user: @user, position: :east,  point: 36300)
+    game.results << second_result = Result.new(user: @user, position: :south, point: 25400)
+    game.results << third_result  = Result.new(user: @user, position: :west,  point: 23500)
+    game.results << fourth_result = Result.new(user: @user, position: :north, point: 14800)
+
+    game.save
+
+    assert first_result.score   == 46, 'first score is 46'
+    assert first_result.ranking == 1,  'first ranking is 1'
+
+    assert second_result.score   == 5, 'second score is 6'
+    assert second_result.ranking == 2, 'second ranking is 2'
+
+    assert third_result.score   == -16, 'third score is -16'
+    assert third_result.ranking == 3,   'third ranking is 3'
+
+    assert fourth_result.score   == -35, 'fourth score is -35'
+    assert fourth_result.ranking == 4,   'fourth ranking is 4'
+  end
+
+  test 'should set scores and rankings 3' do # XXX 名前の雑さよ...
+    game = Game.new
+    game.results << first_result  = Result.new(user: @user, position: :east,  point: 34600)
+    game.results << second_result = Result.new(user: @user, position: :south, point: 25700)
+    game.results << third_result  = Result.new(user: @user, position: :west,  point: 23800)
+    game.results << fourth_result = Result.new(user: @user, position: :north, point: 15900)
+
+    game.save
+
+    assert first_result.score   == 44, 'first score is 44'
+    assert first_result.ranking == 1,  'first ranking is 1'
+
+    assert second_result.score   == 6, 'second score is 6'
+    assert second_result.ranking == 2, 'second ranking is 2'
+
+    assert third_result.score   == -16, 'third score is -16'
+    assert third_result.ranking == 3,   'third ranking is 3'
+
+    assert fourth_result.score   == -34, 'fourth score is -34'
+    assert fourth_result.ranking == 4,   'fourth ranking is 4'
+  end
+
+  test 'should set scores and rankings 4' do # XXX 名前の雑さよ...
+    game = Game.new
+    game.results << first_result  = Result.new(user: @user, position: :east,  point: 35700)
+    game.results << second_result = Result.new(user: @user, position: :south, point: 25300)
+    game.results << third_result  = Result.new(user: @user, position: :west,  point: 23800)
+    game.results << fourth_result = Result.new(user: @user, position: :north, point: 15200)
+
+    game.save
+
+    assert first_result.score   == 46, 'first score is 46'
+    assert first_result.ranking == 1,  'first ranking is 1'
+
+    assert second_result.score   == 5, 'second score is 5'
+    assert second_result.ranking == 2, 'second ranking is 2'
+
+    assert third_result.score   == -16, 'third score is -16'
+    assert third_result.ranking == 3,   'third ranking is 3'
+
+    assert fourth_result.score   == -35, 'fourth score is -35'
+    assert fourth_result.ranking == 4,   'fourth ranking is 4'
+  end
 end
