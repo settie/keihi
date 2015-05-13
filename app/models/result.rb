@@ -6,5 +6,5 @@ class Result < ActiveRecord::Base
 
   validates_presence_of :position, :point, :score, :ranking
 
-  enumerize :position, in: %i(east south west north)
+  enumerize :position, in: {east: 1, south: 2, west: 3, north: 4}
 end
