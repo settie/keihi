@@ -1,30 +1,20 @@
-= form_for @game, html: {class: 'form-horizontal'} do |f|
-  - if @game.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@game.errors.count, "error")} prohibited this game from being saved:"
-      %ul
-        - @game.errors.full_messages.each do |msg|
-          %li= msg
+- if @game.errors.any?
+  #error_explanation
+    %h2= "#{pluralize(@game.errors.count, "error")} prohibited this game from being saved:"
+    %ul
+      - @game.errors.full_messages.each do |msg|
+        %li= msg
 
+= simple_form_for @game, html: {class: 'form-horizontal'} do |f|
   .form-group
-    = f.label :length_type, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.select :length_type, Game.length_type.options, {}, class: 'form-control'
+    = f.input :length_type, collection: Game.length_type.options
 
-  = f.fields_for :results do |ff|
-    = ff.hidden_field :position
+  = f.simple_fields_for :results do |rf|
+    = rf.hidden_field :position
     .form-group
-      = ff.label :user_id, class: 'col-sm-2 control-label' do
-        = ff.object.position_text
-      .col-sm-2
-        = ff.select :user_id, options_from_collection_for_select(User.all, :id, :name), {include_blank: true}, class: 'form-control'
-
-      = ff.label :point, class: 'col-sm-2 control-label'
-      .col-sm-6
-        = ff.text_field :point, class: 'form-control'
-
-
+      = rf.association :user, label: rf.object.position_text, wrapper: :horizontal_form_short
+      = rf.input :point, wrapper: :horizontal_form_medium
 
   .form-group
     .col-sm-offset-2.col-sm-10
-      = f.submit 'Save', class: 'btn btn-default'
+      = f.button :submit, 'Save'
