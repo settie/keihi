@@ -19,6 +19,7 @@ end
 
 group :development, :test do
   gem 'byebug'
+  gem 'erb2haml'
   gem 'pry-rails'
   gem 'spring'
   gem 'web-console', '~> 2.0'

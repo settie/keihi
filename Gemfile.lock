@@ -55,6 +55,8 @@ GEM
     debug_inspector (0.0.2)
     enumerize (0.11.0)
       activesupport (>= 3.2)
+    erb2haml (0.1.5)
+      html2haml
     erubis (2.7.0)
     execjs (2.5.2)
     globalid (0.3.5)
@@ -177,6 +179,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   enumerize
+  erb2haml
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
