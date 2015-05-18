@@ -6,9 +6,11 @@
         %li= msg
 
 = simple_form_for @game, html: {class: 'form-horizontal'} do |f|
+  %h2 ゲームの設定
   .form-group
     = f.input :length_type, collection: Game.length_type.options
 
+  %h2 プレイヤー戦績入力
   = f.simple_fields_for :results do |rf|
     = rf.hidden_field :position
     .form-group
