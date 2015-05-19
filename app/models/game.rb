@@ -33,7 +33,7 @@ class Game < ActiveRecord::Base
 
     # first sort key: point(DESC), second sort key: position(ASC)
     results.
-      sort{|a, b| (b.point <=> a.point).nonzero? || (a.position <=> b.position)}.
+      sort{|a, b| (b.point <=> a.point).nonzero? || (a.position_value <=> b.position_value)}.
       each.with_index(1) do |result, ranking|
       result.ranking = ranking
 

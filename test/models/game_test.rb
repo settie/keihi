@@ -151,4 +151,26 @@ class GameTest < ActiveSupport::TestCase
     assert fourth_result.score   == -35, 'fourth score is -35'
     assert fourth_result.ranking == 4,   'fourth ranking is 4'
   end
+
+  test 'should set scores and rankings with same points' do
+    game = Game.new
+    game.results << first_result  = Result.new(user: @user, position: :east,  point: 100000)
+    game.results << second_result = Result.new(user: @user, position: :south, point:      0)
+    game.results << third_result  = Result.new(user: @user, position: :west,  point:      0)
+    game.results << fourth_result = Result.new(user: @user, position: :north, point:      0)
+
+    game.save
+
+    assert first_result.score   == 110, 'first score is 110'
+    assert first_result.ranking == 1,  'first ranking is 1'
+
+    assert second_result.score   == -20, 'second score is -20'
+    assert second_result.ranking == 2, 'second ranking is 2'
+
+    assert third_result.score   == -40, 'third score is -40'
+    assert third_result.ranking == 3,   'third ranking is 3'
+
+    assert fourth_result.score   == -50, 'fourth score is -50'
+    assert fourth_result.ranking == 4,   'fourth ranking is 4'
+  end
 end
