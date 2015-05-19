@@ -75,7 +75,7 @@ class GamesController < ApplicationController
     def game_params
       params.require(:game).permit(
         :length_type,
-        results_attributes: [:user_id, :position, :point]
+        results_attributes: [:id, :user_id, :position, :point]
       )
     end
 end
