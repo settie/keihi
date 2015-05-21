@@ -1,0 +1,32 @@
+dbdata:
+  image: postgres
+  command: true
+  volumes:
+  - /var/lib/postgresql/data
+
+db:
+  image: postgres
+  volumes_from:
+   - dbdata
+  ports:
+  - 5432:5432
+
+gemdata:
+  build: .
+  volumes:
+  - /app/heroku/bundler
+
+web:
+  build: .
+  command: sleep inf
+  ports:
+   - 8080:3000
+  environment:
+    GEM_HOME: /app/heroku/bundler
+    TERM: xterm
+  links:
+  - db
+  volumes:
+  - $PWD:/app/src
+  volumes_from:
+  - gemdata
