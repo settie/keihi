@@ -49,4 +49,6 @@ ONBUILD RUN echo "export GEM_HOME=\"/app/src/vendor/bundle\"" >> /app/.profile.d
 
 ONBUILD RUN echo "cd /app/src" >> /app/.profile.d/ruby.sh
 
+ONBUILD RUN bundle exec rake assets:precompile
+
 ONBUILD EXPOSE 3000
