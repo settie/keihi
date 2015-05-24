@@ -29,3 +29,15 @@
 7. Setup db
 
         docker_bin/rake db:setup
+
+8. Access your site
+  - for boot2docker user
+
+          boot2docker ip
+          > 192.168.59.103
+
+    Access to http://192.168.59.103:8080
+
+  - for others
+
+    Access to http://localhost:8080
