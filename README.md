@@ -33,10 +33,12 @@
 8. Access your site
   - for boot2docker user
 
+    First, find out the IP address of your boot2docker host.
+
           boot2docker ip
           > 192.168.59.103
 
-    Access to http://192.168.59.103:8080
+    Then you can access Uozumi to this url: http://192.168.59.103:8080
 
   - for others
 
