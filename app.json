@@ -1,5 +1,5 @@
 {
-  "name":"uozumi",
+  "name":"keihi",
   "scripts":{
     "postdeploy": "bundle exec rake db:setup"
   },

@@ -1,2 +1,2 @@
 #! /bin/sh
-docker exec -it $(docker ps -f name=uozumi_web -f status=running -l -q) bin/bundle $@
+docker exec -it $(docker ps -f name=keihi_web -f status=running -l -q) bin/bundle $@
