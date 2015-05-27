@@ -1,17 +1,17 @@
-[![Stories in Ready](https://badge.waffle.io/settai/uozumi.png?label=ready&title=Ready)](https://waffle.io/settai/uozumi)
-# uozumi
+[![Stories in Ready](https://badge.waffle.io/settai/keihi.png?label=ready&title=Ready)](https://waffle.io/settai/keihi)
+# keihi
 
 ## Getting Started (docker)
 
 1. Install docker and docker-compose
 
-2. Clone uozumi
+2. Clone keihi
 
-        git clone https://github.com/settai/uozumi
+        git clone https://github.com/settai/keihi
 
 3. Create database.yml
 
-        cd uozumi
+        cd keihi
         cp config/database.yml{.sample,}
 
 4. Create and start containers
@@ -38,7 +38,7 @@
           boot2docker ip
           > 192.168.59.103
 
-    Then you can access Uozumi to this url: http://192.168.59.103:8080
+    Then you can access Keihi to this url: http://192.168.59.103:8080
 
   - for others
 
