@@ -1,4 +1,4 @@
-[![Stories in Ready](https://badge.waffle.io/settai/keihi.png?label=ready&title=Ready)](https://waffle.io/settai/keihi)
+[![Stories in Ready](https://badge.waffle.io/settie/keihi.png?label=ready&title=Ready)](https://waffle.io/settai/keihi)
 # keihi
 
 ## Getting Started (docker)
