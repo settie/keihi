@@ -1,4 +1,4 @@
-[![Stories in Ready](https://badge.waffle.io/settai/keihi.png?label=ready&title=Ready)](https://waffle.io/settai/keihi)
+[![Stories in Ready](https://badge.waffle.io/settie/keihi.png?label=ready&title=Ready)](https://waffle.io/settie/keihi)
 # keihi
 
 ## Getting Started (docker)
@@ -7,7 +7,7 @@
 
 2. Clone keihi
 
-        git clone https://github.com/settai/keihi
+        git clone https://github.com/settie/keihi
 
 3. Create database.yml
 
