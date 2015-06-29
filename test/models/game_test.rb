@@ -7,10 +7,10 @@ class GameTest < ActiveSupport::TestCase
 
   test 'should save with just 4 results' do
     game = Game.new
-    game.results << Result.new(user: @user, position: :east,  point: 35000, score:  45, ranking: 1)
-    game.results << Result.new(user: @user, position: :south, point: 26000, score:   6, ranking: 2)
-    game.results << Result.new(user: @user, position: :west,  point: 24000, score: -16, ranking: 3)
-    game.results << Result.new(user: @user, position: :north, point: 15000, score: -35, ranking: 4)
+    game.results << Result.new(user: @user, position: :east,  point: 350, score:  45, ranking: 1)
+    game.results << Result.new(user: @user, position: :south, point: 260, score:   6, ranking: 2)
+    game.results << Result.new(user: @user, position: :west,  point: 240, score: -16, ranking: 3)
+    game.results << Result.new(user: @user, position: :north, point: 150, score: -35, ranking: 4)
     assert game.save, '4 results given'
   end
 
@@ -21,55 +21,55 @@ class GameTest < ActiveSupport::TestCase
 
   test 'should not save with 3 results' do
     game = Game.new
-    game.results << Result.new(user: @user, position: :east,  point: 35000, score:  45, ranking: 1)
-    game.results << Result.new(user: @user, position: :south, point: 26000, score:   6, ranking: 2)
-    game.results << Result.new(user: @user, position: :west,  point: 24000, score: -16, ranking: 3)
+    game.results << Result.new(user: @user, position: :east,  point: 350, score:  45, ranking: 1)
+    game.results << Result.new(user: @user, position: :south, point: 260, score:   6, ranking: 2)
+    game.results << Result.new(user: @user, position: :west,  point: 240, score: -16, ranking: 3)
     assert_not game.save, '3 results given'
   end
 
   test 'should not save with 5 results' do
     game = Game.new
-    game.results << Result.new(user: @user, position: :east,  point: 35000, score:  45, ranking: 1)
-    game.results << Result.new(user: @user, position: :south, point: 26000, score:   6, ranking: 2)
-    game.results << Result.new(user: @user, position: :west,  point: 24000, score: -16, ranking: 3)
-    game.results << Result.new(user: @user, position: :north, point: 15000, score: -35, ranking: 4)
-    game.results << Result.new(user: @user, position: :north, point: 15000, score: -35, ranking: 4)
+    game.results << Result.new(user: @user, position: :east,  point: 350, score:  45, ranking: 1)
+    game.results << Result.new(user: @user, position: :south, point: 260, score:   6, ranking: 2)
+    game.results << Result.new(user: @user, position: :west,  point: 240, score: -16, ranking: 3)
+    game.results << Result.new(user: @user, position: :north, point: 150, score: -35, ranking: 4)
+    game.results << Result.new(user: @user, position: :north, point: 150, score: -35, ranking: 4)
     assert_not game.save, '5 results given'
   end
 
   test 'should save with total 100000 points' do
     game = Game.new
-    game.results << Result.new(user: @user, position: :east,  point: 35000, score:  45, ranking: 1)
-    game.results << Result.new(user: @user, position: :south, point: 26000, score:   6, ranking: 2)
-    game.results << Result.new(user: @user, position: :west,  point: 24000, score: -16, ranking: 3)
-    game.results << Result.new(user: @user, position: :north, point: 15000, score: -35, ranking: 4)
+    game.results << Result.new(user: @user, position: :east,  point: 350, score:  45, ranking: 1)
+    game.results << Result.new(user: @user, position: :south, point: 260, score:   6, ranking: 2)
+    game.results << Result.new(user: @user, position: :west,  point: 240, score: -16, ranking: 3)
+    game.results << Result.new(user: @user, position: :north, point: 150, score: -35, ranking: 4)
     assert game.save, '100000 points'
   end
 
   test 'should not save with total 99900 points' do
     game = Game.new
-    game.results << Result.new(user: @user, position: :east,  point: 35000, score:  45, ranking: 1)
-    game.results << Result.new(user: @user, position: :south, point: 26000, score:   6, ranking: 2)
-    game.results << Result.new(user: @user, position: :west,  point: 24000, score: -16, ranking: 3)
-    game.results << Result.new(user: @user, position: :north, point: 14900, score: -35, ranking: 4)
+    game.results << Result.new(user: @user, position: :east,  point: 350, score:  45, ranking: 1)
+    game.results << Result.new(user: @user, position: :south, point: 260, score:   6, ranking: 2)
+    game.results << Result.new(user: @user, position: :west,  point: 240, score: -16, ranking: 3)
+    game.results << Result.new(user: @user, position: :north, point: 149, score: -35, ranking: 4)
     assert_not game.save, '99900 points'
   end
 
   test 'should not save with total 10100 points' do
     game = Game.new
-    game.results << Result.new(user: @user, position: :east,  point: 35000, score:  45, ranking: 1)
-    game.results << Result.new(user: @user, position: :south, point: 26100, score:   6, ranking: 2)
-    game.results << Result.new(user: @user, position: :west,  point: 24000, score: -16, ranking: 3)
-    game.results << Result.new(user: @user, position: :north, point: 15000, score: -35, ranking: 4)
+    game.results << Result.new(user: @user, position: :east,  point: 350, score:  45, ranking: 1)
+    game.results << Result.new(user: @user, position: :south, point: 261, score:   6, ranking: 2)
+    game.results << Result.new(user: @user, position: :west,  point: 240, score: -16, ranking: 3)
+    game.results << Result.new(user: @user, position: :north, point: 150, score: -35, ranking: 4)
     assert_not game.save, '99900 points'
   end
 
   test 'should set scores and rankings' do
     game = Game.new
-    game.results << first_result  = Result.new(user: @user, position: :east,  point: 35000)
-    game.results << second_result = Result.new(user: @user, position: :south, point: 26000)
-    game.results << third_result  = Result.new(user: @user, position: :west,  point: 24000)
-    game.results << fourth_result = Result.new(user: @user, position: :north, point: 15000)
+    game.results << first_result  = Result.new(user: @user, position: :east,  point: 350)
+    game.results << second_result = Result.new(user: @user, position: :south, point: 260)
+    game.results << third_result  = Result.new(user: @user, position: :west,  point: 240)
+    game.results << fourth_result = Result.new(user: @user, position: :north, point: 150)
 
     game.save
 
@@ -88,10 +88,10 @@ class GameTest < ActiveSupport::TestCase
 
   test 'should set scores and rankings 2' do # XXX 名前の雑さよ...
     game = Game.new
-    game.results << first_result  = Result.new(user: @user, position: :east,  point: 36300)
-    game.results << second_result = Result.new(user: @user, position: :south, point: 25400)
-    game.results << third_result  = Result.new(user: @user, position: :west,  point: 23500)
-    game.results << fourth_result = Result.new(user: @user, position: :north, point: 14800)
+    game.results << first_result  = Result.new(user: @user, position: :east,  point: 363)
+    game.results << second_result = Result.new(user: @user, position: :south, point: 254)
+    game.results << third_result  = Result.new(user: @user, position: :west,  point: 235)
+    game.results << fourth_result = Result.new(user: @user, position: :north, point: 148)
 
     game.save
 
@@ -110,10 +110,10 @@ class GameTest < ActiveSupport::TestCase
 
   test 'should set scores and rankings 3' do # XXX 名前の雑さよ...
     game = Game.new
-    game.results << first_result  = Result.new(user: @user, position: :east,  point: 34600)
-    game.results << second_result = Result.new(user: @user, position: :south, point: 25700)
-    game.results << third_result  = Result.new(user: @user, position: :west,  point: 23800)
-    game.results << fourth_result = Result.new(user: @user, position: :north, point: 15900)
+    game.results << first_result  = Result.new(user: @user, position: :east,  point: 346)
+    game.results << second_result = Result.new(user: @user, position: :south, point: 257)
+    game.results << third_result  = Result.new(user: @user, position: :west,  point: 238)
+    game.results << fourth_result = Result.new(user: @user, position: :north, point: 159)
 
     game.save
 
@@ -132,10 +132,10 @@ class GameTest < ActiveSupport::TestCase
 
   test 'should set scores and rankings 4' do # XXX 名前の雑さよ...
     game = Game.new
-    game.results << first_result  = Result.new(user: @user, position: :east,  point: 35700)
-    game.results << second_result = Result.new(user: @user, position: :south, point: 25300)
-    game.results << third_result  = Result.new(user: @user, position: :west,  point: 23800)
-    game.results << fourth_result = Result.new(user: @user, position: :north, point: 15200)
+    game.results << first_result  = Result.new(user: @user, position: :east,  point: 357)
+    game.results << second_result = Result.new(user: @user, position: :south, point: 253)
+    game.results << third_result  = Result.new(user: @user, position: :west,  point: 238)
+    game.results << fourth_result = Result.new(user: @user, position: :north, point: 152)
 
     game.save
 
@@ -154,10 +154,10 @@ class GameTest < ActiveSupport::TestCase
 
   test 'should set scores and rankings with same points' do
     game = Game.new
-    game.results << first_result  = Result.new(user: @user, position: :east,  point: 100000)
-    game.results << second_result = Result.new(user: @user, position: :south, point:      0)
-    game.results << third_result  = Result.new(user: @user, position: :west,  point:      0)
-    game.results << fourth_result = Result.new(user: @user, position: :north, point:      0)
+    game.results << first_result  = Result.new(user: @user, position: :east,  point: 1000)
+    game.results << second_result = Result.new(user: @user, position: :south, point:    0)
+    game.results << third_result  = Result.new(user: @user, position: :west,  point:    0)
+    game.results << fourth_result = Result.new(user: @user, position: :north, point:    0)
 
     game.save
 

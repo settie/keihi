@@ -26,7 +26,7 @@ class Game < ActiveRecord::Base
       return false
     end
 
-    unless results.map(&:point).compact.sum == TOTAL_POINT
+    unless results.map(&:point).compact.sum.*(100) == TOTAL_POINT
       errors.add(:base, "need #{TOTAL_POINT} points")
       return false
     end
@@ -38,7 +38,7 @@ class Game < ActiveRecord::Base
       result.ranking = ranking
 
       # XXX 無駄な処理感が否めないので良い方法あったらリファクタして
-      rounded_point = (result.point / 1000.0).round * 1000
+      rounded_point = (result.point * 100 / 1000.0).round * 1000
       result.score = ((rounded_point - BASE_POINT) / 1000.0).round + uma_rating[ranking]
     end
 
