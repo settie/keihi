@@ -20,3 +20,19 @@
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.button :submit, 'Save'
+
+:javascript
+  $('input.numeric').on('blur', function() {
+    var $inputs = $('input.numeric')
+
+    var filled = _.filter($inputs, function(i) { return !!i.value;  });
+    if (filled.length !== 3) {
+      return;
+    }
+
+    var vals = _.map(filled, function(i) { return parseInt(i.value) });
+    var sum = _.reduce(vals, function(t, n) { return t += n });
+    var rest = 1000 - sum
+    var empty = _.find($inputs, function(i) { return !i.value; })
+    empty.value = rest;
+  });

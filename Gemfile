@@ -16,6 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
+  gem 'rails-assets-lodash'
 end
 
 group :development, :test do
