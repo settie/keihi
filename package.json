@@ -1,0 +1,18 @@
+{
+  "name": "keihi",
+  "private": true,
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/settie/keihi.git",
+    "type": "git"
+  },
+  "author": "flada-auxv <aseknock@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "2.1.0-beta.27",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --config webpack.config.js"
+  }
+}
