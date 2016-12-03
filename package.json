@@ -20,13 +20,13 @@
     "eslint-plugin-jsx-a11y": "^3.0.1",
     "eslint-plugin-react": "^6.7.1",
     "webpack": "2.1.0-beta.27",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-server": "2.1.0-beta.12"
   },
   "dependencies": {
     "react": "^15.4.1",
     "react-dom": "^15.4.1"
   },
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.config.js"
+    "dev": "webpack-dev-server --hot --inline --content-base public/"
   }
 }

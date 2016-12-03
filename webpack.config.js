@@ -4,20 +4,14 @@ var path = require("path");
 var webpack = require('webpack');
 
 module.exports = {
-  devServer: {
-    inline: true,
-    hot: true,
-    contentBase: path.resolve(__dirname, "dist")
-  },
   devtool: 'inline-source-map',
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, "dist"),
-    publicPath: "/assets/",
+    path: path.resolve(__dirname, "public/assets"),
+    publicPath: "/public/assets/",
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     // XXX: https://github.com/MoOx/eslint-loader/issues/113#issuecomment-248214491
     new webpack.LoaderOptionsPlugin({
       options: {
