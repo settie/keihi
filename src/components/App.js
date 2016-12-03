@@ -1,14 +1,14 @@
 import React, { Component } from "react"
-import { AppContainer } from "react-hot-loader"
 
-import Root from "./Root"
+import Header from "./Header"
 
 export default class App extends Component {
   render() {
     return (
-      <AppContainer>
-        <Root />
-      </AppContainer>
+      <div>
+        <Header />
+        <section>`{Date.now()}`, hi</section>
+      </div>
     )
   }
 }

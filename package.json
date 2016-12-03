@@ -20,9 +20,7 @@
     "eslint-plugin-jsx-a11y": "^3.0.1",
     "eslint-plugin-react": "^6.7.1",
     "webpack": "2.1.0-beta.27",
-    "webpack-dev-middleware": "^1.8.4",
-    "webpack-dev-server": "2.1.0-beta.12",
-    "webpack-hot-middleware": "^2.13.2"
+    "webpack-dev-server": "2.1.0-beta.12"
   },
   "dependencies": {
     "react": "^15.4.1",
@@ -30,6 +28,6 @@
     "react-hot-loader": "v3.0.0-beta.6"
   },
   "scripts": {
-    "dev": "node server.js"
+    "dev": "webpack-dev-server --hot --inline --progress --content-base public/"
   }
 }

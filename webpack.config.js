@@ -4,8 +4,6 @@ var webpack = require("webpack");
 module.exports = {
   devtool: "inline-source-map",
   entry: [
-    "react-hot-loader/patch",
-    "webpack-hot-middleware/client",
     "./src/index"
   ],
   output: {
@@ -14,7 +12,6 @@ module.exports = {
     filename: "bundle.js"
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     // XXX: https://github.com/MoOx/eslint-loader/issues/113#issuecomment-248214491
     new webpack.LoaderOptionsPlugin({
       options: {
