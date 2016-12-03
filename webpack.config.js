@@ -16,5 +16,18 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-  ]
+    // XXX: https://github.com/MoOx/eslint-loader/issues/113#issuecomment-248214491
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        eslint: {
+          configFile: ".eslintrc"
+        }
+      }
+    })
+  ],
+  module: {
+    loaders: [
+      { enforce: "pre", test: /\.js$/, exclude: /node_modules/, loader: "eslint-loader" }
+    ]
+  }
 }
