@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 var path = require("path");
 var webpack = require('webpack');
 
@@ -36,7 +38,10 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: "babel-loader",
+        query: {
+          presets: ["react", "latest"]
+        }
       }
     ]
   }
