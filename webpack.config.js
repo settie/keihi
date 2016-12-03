@@ -1,17 +1,20 @@
-/* eslint-env node */
-
 var path = require("path");
-var webpack = require('webpack');
+var webpack = require("webpack");
 
 module.exports = {
-  devtool: 'inline-source-map',
-  entry: './src/index.js',
+  devtool: "inline-source-map",
+  entry: [
+    "react-hot-loader/patch",
+    "webpack-hot-middleware/client",
+    "./src/index"
+  ],
   output: {
     path: path.resolve(__dirname, "public/assets"),
     publicPath: "/public/assets/",
-    filename: 'bundle.js'
+    filename: "bundle.js"
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     // XXX: https://github.com/MoOx/eslint-loader/issues/113#issuecomment-248214491
     new webpack.LoaderOptionsPlugin({
       options: {
@@ -34,7 +37,8 @@ module.exports = {
         exclude: /node_modules/,
         loader: "babel-loader",
         query: {
-          presets: ["react", "latest"]
+          presets: ["react", "latest"],
+          plugins: ["react-hot-loader/babel"]
         }
       }
     ]

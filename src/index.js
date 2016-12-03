@@ -1,12 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 
-export class App extends Component {
-  render() {
-    return (
-      <p>hi</p>
-    )
-  }
+import App from "./components/App"
+
+if (module.hot) {
+  module.hot.accept();
 }
 
 ReactDOM.render(
