@@ -11,7 +11,8 @@
       "jsx": true
     }
   },
-  "plugins": [
-    "react"
-  ]
+  "plugins": ["react"],
+  "rules": {
+      "quotes": ["error", "double"]
+    }
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 
 import Header from "./Header"
 
@@ -7,7 +7,7 @@ export default class Root extends Component {
     return (
       <div>
         <Header />
-        <section>hiho</section>
+        <section>`{Date.now()}`, hi</section>
       </div>
     )
   }

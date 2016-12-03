@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { AppContainer } from 'react-hot-loader'
+import React, { Component } from "react"
+import { AppContainer } from "react-hot-loader"
 
 import Root from "./Root"
 
